@@ -1,0 +1,86 @@
+-------------AGREGANDO ARCHIVO A STAGED-----------
+$ git add archivo.txt
+-------------COMPROMETIENDO EL ARCHIVO COMMIT---------------------
+$ git commit -m "mensaje"
+
+---------ELIMINANDO ARCHIVO-------------
+git rm archivo
+
+---------PARA SACAR EL ARCHIVO DEL AREA DE STAGE--------------------------------
+
+git restore --staged <archivo>
+
+---------PARA DESCARTAR LOS CAMBIOS EN EL DIRECTORIO DE TRABAJO------------------
+
+git restore <archivo>
+
+---------PARA CAMBIAR NOMBRE DEL ARCHIVO-----------------------------------------
+
+    old             new
+mv archivo1.txt archivo.txt
+git add archivo1.txt archivo.txt 
+
+para hacer commit y colocar el titulo
+git commit -m "renombrando archivo"
+
+otra forma
+
+$ git mv archivo.txt archivo1.txt
+
+$ git commit -m "devolviendo nombre del archivo"
+
+----------PARA IGNORAR ARCHIVO QUE NO QUIERE QUE SE SUBA--------------------------
+
+crear un archivo llamado .gitignore
+dentro del archivo agregas los archivos que quieren que no se suban
+
+$git add .gitignore
+$ git commit -m "agregando archivo .gitignore"
+
+-----------OTRA FORMA DE VER GIT STATUS -S ---------------------------------
+muestra solo los archivos que se han modificado o creado
+$ git status -s
+
+M modificado
+?? el archivo todavia no esta en stage
+A agregado
+
+cuando la letras estan en verde estan listo para comprometer commit
+
+------------OTRA FORMA DE VER GIT STATUS DIFF----------------------------------------
+
+muestra los cambios que se han hecho pero que no estan en staged
+$ git diff
+
+muetras los archivos que ya estan en staged
+$ git diff --staged
+
+------------PARA VER EL HISTORIAL DE LOS COMMIT GIT LOG--------------------------------
+
+$ git log 
+
+otra forma 
+
+$ git log --oneline
+
+-------------PARA SABER LA RAMA EN QUE ESTMOS TRABAJANDO--------
+$ git branch
+
+------  PARA CREAR UNA RAMA --------------
+$ git checkout -b features/nombre-de-la-funcion
+$ git checkout -b ramaB
+
+-----------MOSTRAR EL CONTENIDO DEL ARCHIVO------------------------------------------------
+$ cat archivo2.txt
+
+-----------PARA CAMBIARSE DE RAMA----------------------------------------------------------
+$ git checkout main
+
+-----------PARA UNIR LAS RAMAS ------------------------------------------------------------
+SE DEBE ESTAR EN LA RAMA MAIN
+
+$ git merge ramab
+
+-----------PARA CREAR UNA RAMA NUEVA PERO ESTE EN GIT SIN DARLE MARGE-------------------------
+$ git checkout -b ramac
+git push -u origin ramac
